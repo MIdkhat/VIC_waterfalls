@@ -1,0 +1,240 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin:0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.hidden{
+    display: none;
+}
+
+hr{
+    border-top: 1px solid black;
+}
+
+h3 {
+    font-size: 1.4em;
+    margin-top: 0.1em;
+    margin-bottom: 0.4em;
+}
+.arrow{
+    color: rgb(2, 117, 216) !important;
+    margin-top: 0.8em;
+}
+
+.bg-gray{
+    background-color: rgb(220, 220, 220, 1);
+}
+
+.blue{
+    color: rgb(2, 117, 216);
+}
+
+.map {
+    position: relative;
+    overflow: hidden;
+    pointer-events: all;
+    height: 100%;
+    width: 100%;
+}
+
+.ui-tooltip{
+    white-space: pre-line;
+}
+
+#loading{
+    position: absolute;
+    z-index: 1000;
+    top: 50px;
+    left: calc(50% - 30px);
+    width: 30px;
+    height: 30px;
+    display: none;
+}
+/* 
+--------------------
+SIDEBAR TOOLS
+--------------------
+*/
+.panel{
+    pointer-events: all;
+    position: absolute;
+    overflow: hidden;
+    z-index: 50; 
+    border: 1px #333 solid;
+    border-radius: 3px;
+    padding: 1em;
+}
+.panel-scroller{
+    padding: 0px 10px 10px 10px;
+    margin: 0;
+    margin-top: 20px;
+    overflow-y: auto !important;
+}
+#sidebar-container {
+    z-index: 51;
+}
+#sidebar-content input{
+    margin-left: 1em;
+}
+#sidebar-content label{
+    font-size: 0.9em;
+}
+#sidebar-container select{
+    width: 220px;
+    font-size: 0.9em;
+}
+#current-date-container{
+    position: absolute;
+    z-index: 100;
+    top: 12px;
+    right: 55px;
+    width: 150px;
+    height: 38px;
+    line-height: 38px;
+    /* text-align: center; */
+    padding: 0 0 0 10px;
+    color: red;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.menu-button{ 
+    position: absolute;
+    left: 5px;
+    z-index: 10;
+    pointer-events: all;
+    width: 40px;
+    height: 40px;
+    cursor: pointer; 
+    color: white;
+    background-color: rgba(2, 117, 216, 0.8);
+    border: 1px solid white;
+    border-radius: 3px;
+}
+.menu-button:hover{
+    background-color: rgba(2, 117, 216, 1);
+}
+.menu-button:focus{
+    background-color: rgba(2, 117, 216, 1);
+}
+
+#playmenu-container{
+    padding: 0;
+}
+#playmenu-content{
+    margin: 6px;
+}
+.slideshow-button {
+    position: absolute;
+    left: 5px;
+    z-index: 20;
+    pointer-events: all;
+    cursor: pointer; 
+    color: white;
+    background-color: rgba(2, 117, 216, 0.8);
+    border: 1px solid white;
+    border-radius: 3px;
+}
+.slideshow-button:hover{
+    background-color: rgba(2, 117, 216, 1);
+}
+.slideshow-button:focus{
+    background-color: rgba(2, 117, 216, 1);
+}
+
+/* 
+--------------------
+OL STYLES 
+--------------------
+*/
+.ol-popup {
+    position: absolute;
+    z-index: 50;
+    min-width: 270px;
+    max-height: 460px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.5);
+    border-radius: 3px;
+    border: 1px solid #333;
+    bottom: 12px;
+    left: -50px;
+}
+.ol-popup:after, .ol-popup:before {
+    top: 100%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.ol-popup:after {
+    border-top-color: rgb(220, 220, 220, 1);
+    border-width: 10px;
+    left: 48px;
+    margin-left: -10px;
+}
+.ol-popup:before {
+    border-top-color:  rgb(220, 220, 220, 1);;
+    border-width: 11px;
+    left: 48px;
+    margin-left: -11px;
+}
+.popup-scroller{
+    max-height: 350px;
+    padding: 0px 10px 10px 10px;
+    margin: 0;
+    overflow-y: auto !important;
+}
+
+.ol-popup-closer {
+    text-decoration: none !important;
+    font-size: 1.3em;
+    position: absolute;
+    z-index: 100;
+    top: 5px;
+    right: 20px;
+}
+.ol-popup-closer:after {
+    content: "✖" !important;
+}
+
+.ol-overlaycontainer-stopevent, .ol-overlaycontainer {
+    z-index: 50!important;
+}
+
+.ol-control button{
+    cursor: pointer;
+    background-color: rgba(2, 117, 216, 0.8);
+    width: 40px;
+    height: 40px;
+}
+.ol-control button:hover{
+    background-color: rgba(2, 117, 216, 1);
+}
+.ol-control button:focus{
+    background-color: rgba(2, 117, 216, 1);
+}
+.ol-zoom, .ol-attribution{
+    left: unset;
+    right: 10px;
+    background-color: rgba(0,0,0,0);
+}
+.ol-overviewmap{
+    background-color: rgba(0,0,0,0);
+}
+.ol-scale-line{
+    background-color: rgba(2, 117, 216, 0.6);
+}
+.ol-zoom:hover, .ol-attribution:hover, .ol-overviewmap:hover{
+    background-color: rgba(0,0,0,0);
+}
+.ol-zoom .ol-zoom-in, .ol-zoom .ol-zoom-out, .ol-attribution > button, .ol-overviewmap > button{
+    border-radius: 10%;
+}
+.ol-overviewmap {
+    bottom: 60px;
+}
